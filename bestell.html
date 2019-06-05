@@ -1,0 +1,81 @@
+<!DOCTYPE>
+<html>
+<head> 
+	<title> Sammies </title>
+	<script type="text/javascript" src="bestell.js"></script>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+	<meta charset="UTF-8"> 
+	<link rel="stylesheet" href="bestell.css">
+	 <!--
+	 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+	<link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet"/>  -->
+	<link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet"/>
+</head>
+<body>
+	<div class="dynamicFormContainer"> </div>
+	<div class="personalInfoDiv" id="personalInfoForm" hidden>
+		<form class="personalInfoForm" name="personalInfoForm" method="post" action="bestellung.php" onsubmit="return foo(this)" id="regForm">
+
+			<div class="formTab">
+				<p class="tabTitle">Name:<br/></p>
+				<input name="vorname" placeholder="Vorname" required>
+				<input name="nachname" placeholder="Nachname" required>
+				<select name="anrede" style="width:200px;">
+					<optgroup>
+						<option value="default" disabled selected>Anrede </option>
+						<option value="Herr">Herr</option>
+						<option value="Frau">Frau</option>
+						<option value="Firma">Firma</option>
+					</optgroup>
+				</select> 
+			</div>
+			
+			<div class="formTab">
+				<p class="tabTitle">Kontakt:</p>
+				<input name="email" placeholder="Email Adresse" type="email" required>
+				<input name="firm" placeholder="Firma"> 
+				<input name="tel" placeholder="Telefon" required>
+			</div>
+			
+			<div class="formTab">
+				<p class="tabTitle">Adresse:</p>
+				<input name="street" placeholder="Straße" required>
+				<input name="house" placeholder="Hausnummer" required><br/>
+				<input name="city" placeholder="Ort" required>
+				<input name="postcode" placeholder="Postleitzahl" required>
+			</div>
+
+			<div class="formTab">
+				<p class="tabTitle">Zahlungsinformation:</p>
+				<select name="zahlungsart">
+					<option value="default" disabled selected>Zahlungsart</option>
+					<option value="Zahlschein">Zahlschein</option>
+					<option value="Lastschrift">Bankeinzug/Lastschrift</option>
+				</select>
+				<input name="bank" placeholder="Bank">
+				<input name="iban" placeholder="IBAN">
+			</div>
+			<div class="formTab">
+				<p class="tabTitle">Sonstiges:</p>
+				<input name="comments" placehoder="Sonstige Bemerkungen">
+			</div>
+
+			<div style="overflow:auto;">
+			    <div style="float:right;">
+					<button type="button" id="prevBtn" onclick="nextPrev(-1)">Zurück</button>
+					<button type="button" id="nextBtn" onclick="nextPrev(1)">Weiter</button>
+			    </div>
+			</div>
+			  <!-- Circles which indicates the steps of the form: -->
+			<div style="text-align:center;margin-top:40px;">
+			    <span class="step"></span>
+			    <span class="step"></span>
+			    <span class="step"></span>
+			    <span class="step"></span>
+			</div>
+		</form>
+	</div>
+
+</body>
+</html>
